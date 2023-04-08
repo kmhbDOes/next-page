@@ -10,25 +10,22 @@ import "./index.css";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App></App>,
+    element: <App />,
     children: [
       {
         path: "/",
-        element: <Home></Home>,
+        element: <Home />,
       },
       {
         path: "books",
-        element: <Books></Books>,
+        element: <Books />,
+        loader: () => fetch("https://api.itbook.store/1.0/new"),
       },
       {
         path: "about",
-        element: <About></About>,
+        element: <About />,
       },
     ],
-  },
-  {
-    path: "/about",
-    element: <p>This is about</p>,
   },
 ]);
 
