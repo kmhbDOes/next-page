@@ -5,6 +5,7 @@ import App from "./App";
 import About from "./components/About";
 import BookDetails from "./components/BookDetails";
 import Books from "./components/Books";
+import ErrorPage from "./components/ErrorPage";
 import Home from "./components/Home";
 import LoadingSpinner from "./components/LoadingSpinner";
 import "./index.css";
@@ -13,6 +14,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
