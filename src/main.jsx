@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import About from "./components/About";
+import BookDetails from "./components/BookDetails";
 import Books from "./components/Books";
 import Home from "./components/Home";
 import "./index.css";
@@ -20,6 +21,12 @@ const router = createBrowserRouter([
         path: "books",
         element: <Books />,
         loader: () => fetch("https://api.itbook.store/1.0/new"),
+      },
+      {
+        path: "book/:id",
+        element: <BookDetails />,
+        loader: ({ params }) =>
+          fetch(`https://api.itbook.store/1.0/books/${params.id}`),
       },
       {
         path: "about",
