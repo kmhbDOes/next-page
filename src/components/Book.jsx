@@ -11,7 +11,7 @@ const Book = ({ book }) => {
           className="object-cover w-full h-56 md:h-64 xl:h-80"
         />
 
-        <div className="bg-black text-gray-300 px-6 py-4 bg-opacity-75 opacity-0 hover:opacity-100 absolute inset-0 transition-opacity duration-200 flex flex-col text-left">
+        <div className="bg-black text-gray-300 px-6 gap-y-3 py-4 bg-opacity-75 opacity-0 hover:opacity-100 absolute inset-0 transition-opacity duration-200 flex flex-col text-left">
           <p>{book.title}</p>
           <br />
           <p>{book.subtitle.substring(0, 45)}...</p>

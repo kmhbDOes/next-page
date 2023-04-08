@@ -1,11 +1,18 @@
 import React, { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
+import LoadingSpinner from "./LoadingSpinner";
 
 const BookDetails = () => {
   const bookData = useLoaderData();
   const { image, title, desc, authors, publisher, year, rating, url, price } =
     bookData;
   const [fold, setFold] = useState(true);
+
+  const navigation = useNavigation();
+  console.log(navigation.state);
+  if (navigation.state === "loading") {
+    return <LoadingSpinner />;
+  }
 
   console.log(bookData);
   return (
@@ -21,7 +28,7 @@ const BookDetails = () => {
           />
         </div>
         {/* Details Container */}
-        <div className=" p-8 bg-white lg:p-16 lg:pl-10 lg:w-1/2">
+        <div className=" p-8 bg-white lg:p-16 lg:pl-10 lg:w-1/2 text-left">
           <div>
             <p className="badge">Brand new</p>
           </div>
